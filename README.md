@@ -14,7 +14,7 @@ With authour Ram Patra.
    data.
 
 # Getting Started
-1. `$ git clone https://github.com/zanathan/wedding-website.git` - clone this project to your computer
+1. `$ git clone https://github.com/bibandalwedding/wedding-website.git` - clone this project to your computer
 2. `$ cd wedding-website` - go inside the project directory
 3. `$ npm install` - install dependencies
 4. `$ gulp` - compile sass to css, minify js, etc.

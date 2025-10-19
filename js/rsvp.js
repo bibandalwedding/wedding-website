@@ -264,7 +264,7 @@ var data_div = function (valid_data){
 
     innerHtml += `<div class="col-md-10 col-md-offset-1">
                         <h3>Share a Memory</h3>
-                        <p>We'd love to include you in our photo collection! Please send us a photo on WhatsApp or email zanathanjulyan@gmail.com of you with either one (or both) of us — it can be a favourite memory, a funny moment, or just a snap you love.<p>
+                        <p>We'd love to include you in our photo collection! Please send us a photo on WhatsApp or email bibandalwedding@gmail.com of you with either one (or both) of us — it can be a favourite memory, a funny moment, or just a snap you love.<p>
                     </div>
                     <button type="button" id="button-0" class="btn-fill rsvp-submission-btn" onclick="on_data_submit()">
                         Submit
@@ -274,28 +274,8 @@ var data_div = function (valid_data){
     return innerHtml;
 }
 
-var accommodation_from_code = function(code){
-    var app_url = "https://script.google.com/macros/s/AKfycbwY7v4_PkpA7ZzIwuuglhA-Ovusz_K2NeUmfvlz9E-TOJ37WrjGqpAF_R29VNeJZ3f4/exec";
-    app_url = app_url + "?code=" + code;
-    var data_response = {};
-    $.ajax({
-        url: app_url,
-        method: "GET",
-        async: false,
-        dataType: "json",
-        success: function (response) {
-            data_response = response
-        },
-        error: function () {
-            alert("The form failed. Please let Jonathan know and try again later.")
-            data_response = {}
-        }
-    });
-    return data_response;
-}
-
 var data_from_code = function (code) {
-    var app_url = "https://script.google.com/macros/s/AKfycbyAgYTVPiR6Vo7VSPLhtRhHPGUoUsvaygx5ECwSOHDC7_2u4f_doZ00Dp0h-LdIrLI/exec";
+    var app_url = "https://script.google.com/macros/s/AKfycbzwNH-o-2vHi-7YRNjpZr1Io_RiFhcFcrm6KUbpwc2AHVi0iYp37DvVaQ9UUzyVJmtP/exec";
     app_url = app_url + "?code=" + code + "&verifyonly=" + false;
     var data_response = {};
     $.ajax({
@@ -537,7 +517,7 @@ var validate_selection = function(rsvp_data){
 
 // update details
 var update_rsvp_details = function (data) {
-    var app_url = "https://script.google.com/macros/s/AKfycbyAgYTVPiR6Vo7VSPLhtRhHPGUoUsvaygx5ECwSOHDC7_2u4f_doZ00Dp0h-LdIrLI/exec"; 
+    var app_url = "https://script.google.com/macros/s/AKfycbzwNH-o-2vHi-7YRNjpZr1Io_RiFhcFcrm6KUbpwc2AHVi0iYp37DvVaQ9UUzyVJmtP/exec"; 
     $.ajax({
         url: app_url,
         method: "POST",

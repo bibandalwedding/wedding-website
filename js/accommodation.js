@@ -1,26 +1,6 @@
 var verify_from_code = function (code) {
-    var app_url = "https://script.google.com/macros/s/AKfycbyAgYTVPiR6Vo7VSPLhtRhHPGUoUsvaygx5ECwSOHDC7_2u4f_doZ00Dp0h-LdIrLI/exec";
+    var app_url = "https://script.google.com/macros/s/AKfycbzwNH-o-2vHi-7YRNjpZr1Io_RiFhcFcrm6KUbpwc2AHVi0iYp37DvVaQ9UUzyVJmtP/exec";
     app_url = app_url + "?code=" + code + "&verifyonly=" + true;
-    var data_response = {};
-    $.ajax({
-        url: app_url,
-        method: "GET",
-        async: false,
-        dataType: "json",
-        success: function (response) {
-            data_response = response
-        },
-        error: function () {
-            alert("The form failed. Please let Jonathan know and try again later.")
-            data_response = {}
-        }
-    });
-    return data_response;
-};
-
-var accommodation_from_code = function (code) {
-    var app_url = "https://script.google.com/macros/s/AKfycbwY7v4_PkpA7ZzIwuuglhA-Ovusz_K2NeUmfvlz9E-TOJ37WrjGqpAF_R29VNeJZ3f4/exec";
-    app_url = app_url + "?code=" + code;
     var data_response = {};
     $.ajax({
         url: app_url,
