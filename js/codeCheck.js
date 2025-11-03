@@ -15,7 +15,7 @@ window.onload = function () {
 };
 
 var validate_code = function (code) {
-    var app_url = "https://script.google.com/macros/s/AKfycbzwNH-o-2vHi-7YRNjpZr1Io_RiFhcFcrm6KUbpwc2AHVi0iYp37DvVaQ9UUzyVJmtP/exec";
+    var app_url = "https://script.google.com/macros/s/AKfycbym41MTiZNFIqIpJth5dmf_s6xuNinkfLvvFgLEKuvOAmLyRj3tTmMHW0tSwYCnD-am/exec";
     app_url = app_url + "?code=" + code + "&verifyonly=" + true;
     var valid_code = false;
     $.ajax({
