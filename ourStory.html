@@ -14,7 +14,7 @@
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="The wedding of Rosanna & Jonathan">
+    <meta property="og:title" content="The wedding of Bibek & Alison">
     <meta property="og:description" content="We would like to invite you to our big day.">
     <meta property="og:image" content="img/0079.jpg">
     <meta property="og:type" content="website">
@@ -64,8 +64,7 @@
 <div id="loading" class="fancybox-overlay fancybox-overlay-fixed" style="display: none;">
     <div id="fancybox-loading" class="fancybox-loading"><img src="img/fancybox_loading.gif" alt=""/></div>
 </div>
-<!-- Visual Story images -->
-<div id="all-photos"></div>
+
 <section >
     <section class="navigation">
         <header>
@@ -76,7 +75,6 @@
                         <ul class="primary-nav">
                             <li><a href="javascript:addIDToURL('invitation.html','#intro');">Invitation</a></li>
                             <li><a href="javascript:addIDToURL('accommodation.html','');">Accommodation</a></li>
-                            <li><a href="javascript:addIDToURL('howWeMet.html','');">How We Met</a></li>
                             <li><a href="#intro">Our Story</a></li>
                             <li><a href="javascript:addIDToURL('album.html','');">Engagement Album</a></li>
                         </ul>
@@ -100,31 +98,46 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center heroless">
-                <h3 class="header">Our Story</h3>
+                <h3 class="header">OUR STORY</h3>
             </div>
         </div>
-        <div class="col-md-12 text-center">
-            <p>
-                We started out as friends. When realising we had feelings for each other, we tried to push those feelings down, 
-                for so many reasons - the most logical was that Zan was moving abroad. Sometimes, love overrules reason. 
-                Our relationship started, first as something we knew had an end date, but when Zan finally booked her one way ticket, 
-                Jono booked a return and joined her for a month long European adventure. Standing at the Amsterdam train station, 
-                with our hearts full but so heavy, we knew that our “goodbye” had to have a “for now”.<br/>
-                Zan braved Ireland alone, while Jono braved a new life back in South Africa knowing something was missing.<br/>
-                After 2 long years of long distance, we finally admitted defeat and pivoted. We set our sails on new shores, and met in Spain, 
-                where we were to finally start our lives together. <br/>
-                One week into our new life, Jono got down on one knee, Zan said yes, and this is how we got here. 
-            </p>
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/0059.jpg" class="wp1"></div>
+            <div class="col-md-6 text-center">
+                <p>
+                    Once upon a time, in a land far, far away, there lived a prince who would one day 
+                    travel halfway across the world in search of his true love or at least, 
+                    that's how Alison likes to imagine it. <br/><br/>
+                    
+                    It's true that Bibek was born far away from Ireland, and in her eyes, he is Prince Charming. 
+                    But that's where the fairytale ends… and the very modern love story begins.<br/><br/>
+
+                    One dark, rainy November evening, Alison was on a bus home from Cork, scrolling through Tinder to pass the time. 
+                    That's when a handsome young man appeared on her screen, his profile filled with all the right signs of being a genuine, 
+                    normal human being: a college graduation photo, one with a pet, a holiday snap, and one with friends.<br/><br/>
+
+                    Naturally, she swiped right, mainly because his bio included the promise of a lifetime supply of pancakes 
+                    (a claim that, it turns out, was a little optimistic).<br/><br/>
+
+                    There were no fireworks just yet, but the next day, fate stepped in when Bibek's curiosity was piqued by a quirky ice cream-loving, 
+                    powerlifting, bin-bag-wearing witch (In her defence, it was Halloween). He swiped right, and after a week of chatting, they finally met in person.<br/><br/>
+
+                    They've been inseparable ever since.<br/><br/>
+
+                    Their story has taken them across the globe and on countless adventures, big and small. In April 2024, 
+                    they received the keys to their forever home. By March 2025, their little family grew by four paws with the arrival of their beloved pup Busby.<br/><br/>
+
+                    Now, they're getting ready for their greatest adventure yet...marriage.
+                </p>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/0061.jpg" class="wp2"></div>
         </div>
-        <div class="col-md-12 text-center">
-            <a class="fancybox btn btn-white btn-small" color="black" rel="group" href="img/visual_story/1.png">
-                Have a look at our life in pictures
-            </a>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/0059.jpg" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/0061.jpg" class="wp9"></div>
         </div>
     </div>
 </section>
-
-
 
 <footer>
     <div class="container">
@@ -145,21 +158,6 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script src="js/codeCheck.js"></script>
-<script>
-    document.getElementById("all-photos").innerHTML = get_photos();
-    
-    function get_photos()
-    {
-        var innerHtml = '';
-        for (var i = 2; i < 75; i++) {
-            var path = "img/visual_story/"
-            path +=i
-            path += '.png'
-            innerHtml += `<a class="fancybox" rel="group" href="` + path + `"></a>`
-        }
-        return innerHtml;
-    }
-</script>
 <!-- Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {
