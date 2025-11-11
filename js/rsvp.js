@@ -135,7 +135,7 @@ var data_div = function (valid_data){
 }
 
 var data_from_code = function (code) {
-    var app_url = "https://script.google.com/macros/s/AKfycbym41MTiZNFIqIpJth5dmf_s6xuNinkfLvvFgLEKuvOAmLyRj3tTmMHW0tSwYCnD-am/exec";
+    var app_url = "https://script.google.com/macros/s/AKfycbwaazcTIdIEnCzCehkJTSVX9pjGai_tekSHjB4j8Jm__M1pdbwDxbbKgZEBncclJg/exec";
     app_url = app_url + "?code=" + code + "&verifyonly=" + false;
     var data_response = {};
     $.ajax({
@@ -371,7 +371,7 @@ var validate_selection = function(rsvp_data){
 
 // update details
 var update_rsvp_details = function (data) {
-    var app_url = "https://script.google.com/macros/s/AKfycbym41MTiZNFIqIpJth5dmf_s6xuNinkfLvvFgLEKuvOAmLyRj3tTmMHW0tSwYCnD-am/exec"; 
+    var app_url = "https://script.google.com/macros/s/AKfycbwaazcTIdIEnCzCehkJTSVX9pjGai_tekSHjB4j8Jm__M1pdbwDxbbKgZEBncclJg/exec"; 
     $.ajax({
         url: app_url,
         method: "POST",

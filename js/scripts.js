@@ -264,7 +264,7 @@ function addIDToURL(baseurl, path) {
 
 // Validate Code
 var validate_code = function (code) {
-    var app_url = "https://script.google.com/macros/s/AKfycbym41MTiZNFIqIpJth5dmf_s6xuNinkfLvvFgLEKuvOAmLyRj3tTmMHW0tSwYCnD-am/exec";
+    var app_url = "https://script.google.com/macros/s/AKfycbwaazcTIdIEnCzCehkJTSVX9pjGai_tekSHjB4j8Jm__M1pdbwDxbbKgZEBncclJg/exec";
     app_url = app_url + "?code=" + code + "&verifyonly=" + true;
     var valid_code = false;
     $.ajax({
