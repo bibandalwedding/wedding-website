@@ -61,7 +61,10 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body id="top">
-<section>
+<div id="loading" class="fancybox-overlay fancybox-overlay-fixed" style="display: none;">
+    <div id="fancybox-loading" class="fancybox-loading"><img src="img/fancybox_loading.gif" alt=""/></div>
+</div>
+<section >
     <section class="navigation">
         <header>
             <div class="header-content">
@@ -70,11 +73,11 @@
                     <nav>
                         <ul class="primary-nav">
                             <li><a href="javascript:addIDToURL('invitation.html','#intro');">Invitation</a></li>
-                            <li><a href="#accommodation">Accommodation</a></li>
+                            <li><a href="javascript:addIDToURL('accommodation.html','');">Accommodation</a></li>
                             <li><a href="javascript:addIDToURL('things.html','');">Things to Do</a></li>
                             <li><a href="javascript:addIDToURL('ourStory.html','');">Our Story</a></li>
                             <li><a href="javascript:addIDToURL('album.html','');">Engagement Album</a></li>
-                            <li><a href="javascript:addIDToURL('location.html','');">Location</a></li>
+                            <li><a href="">Location</a></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a class="btn btn-rsvp btn-small" href="javascript:addIDToURL('rsvp.html','');">
@@ -91,59 +94,30 @@
     </section>
 </section>
 
-<section id="accommodation" class="section-padding heroless">
+<section id="gift" class="section-padding heroless gift">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <div id="validation-code"></div>
+            <div class="col-md-12 text-center heroless">
+                <h3 class="header">GIFTING OPTIONS</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>Accommodation Information</h3>
-            </div>
+        <div class="col-md-12 text-center">
+            <p>
+                Your presence at our wedding to celebrate our love story is more than enough.</br></br>
+                However, if you would like to give us a little something on the day, a financial contribution to the life we are building together would be greatly appreciated. We have more appliances and nik naks than we need. 
+            </p>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>There is accommodation available in the hotel (Clanard Court)  but numbers are limited and will be offered on a <b>first-come first serve basis</b>.  
-                    Only available on the Night of the Wedding.</br></br>
-                    <b>Please contact Alison directly via message to book your room.</b></br>
-                    <b>085 156 4381</b>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <ul style="list-style-type:disc;">
-                <li>€190 For 2 people sharing B&B</li>
-                <li>€50 additional adults, B&B</li>
-                <li>€25 Children B&B</li>
-                <li>Room Only €160</li>
-                <li>Single rate is €154</li>
-            </ul>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>
-                    </br>
-                    We have also booked our one B&B across the road. Rooms are limited and will be <b>offered on a first come first served basis</b>. </br>
-                    Hawthorn B & B</br>
-                    Dublin Road, Athy</br>
-                    John & Deirdre Bride
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <ul style="list-style-type:disc;">
-                <li>€110 B&B</li>
-            </ul>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>
-                    <b>Please contact Alison directly via message to book your room.</b>
-                </p>
-            </div>
-        </div>
+    </div>
+</section>
+
+<section id="map" class="section-padding">
+    <div class="text-center">
+        <h3>Location details</h3>
+        <h5>The Clanard Court</h5>
+        <p>Dublin Road, Athy, Kildare R14 FY90</p>
+    </div>
+    <div id="map-canvas">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2401.205937511813!2d-6.962287023403008!3d52.99868137219053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d655cbf5d469d%3A0x4661a00b1ded19c7!2sClanard%20Court%20Hotel!5e0!3m2!1sen!2sza!4v1760989475302!5m2!1sen!2sza" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
 
