@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="The wedding of Bibek & Alison">
     <meta property="og:description" content="We would like to invite you to our big day.">
-    <meta property="og:image" content="img/0079.jpg">
+    <meta property="og:image" content="img/ALISON&BIBEK-5.jpg">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="img/Logos/Alison & Bibek Logo.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="img/Logos/Alison & Bibek Logo.svg">
@@ -76,9 +76,9 @@
                             <li><a href="javascript:addIDToURL('accommodation.html','');">Accommodation</a></li>
                             <li><a href="javascript:addIDToURL('things.html','');">Things to Do</a></li>
                             <li><a href="javascript:addIDToURL('ourStory.html','');">Our Story</a></li>
-                            <li><a href="#eng-pics">Engagement Album</a></li>
+                            <li><a href="javascript:addIDToURL('album.html','');">Engagement Album</a></li>
                             <li><a href="javascript:addIDToURL('location.html','');">Location</a></li>
-                            <li><a href="javascript:addIDToURL('gift.html','');">Gifting Options</a></li>
+                            <li><a href="">Gifting Options</a></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a class="btn btn-rsvp btn-small" href="javascript:addIDToURL('rsvp.html','');">
@@ -94,27 +94,22 @@
         </header>
     </section>
 </section>
- 
 
-<section id="eng-pics" class="section-padding">
-    <div class="container-fluid">
+<section id="gift" class="section-padding heroless gift">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 text-center heroless">
-                <h3 class="header">Engagement Pics</h3>
-                <p style="margin-bottom: -10px;">Photographer - Shane Vaughan</p>
+                <h3 class="header">GIFTING OPTIONS</h3>
             </div>
         </div>
-        
-        <div class="row">
-            <div id="all-photos"></div>
-    <div class="container">
-        <div class="row hidden-lg hidden-md hidden-xs">
-            <div class="col-xs-12 section-border section-padding"></div>
+        <div class="col-md-12 text-center">
+            <p>
+                Your presence at our wedding to celebrate our love story is more than enough.</br></br>
+                However, if you would like to give us a little something on the day, a financial contribution to the life we are building together would be greatly appreciated. We have more appliances and nik naks than we need. 
+            </p>
         </div>
     </div>
 </section>
-
-
 
 <footer>
     <div class="container">
@@ -135,42 +130,6 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script src="js/codeCheck.js"></script>
-<script>
-    document.getElementById("all-photos").innerHTML = get_photos();
-    
-    function get_photos()
-    {
-        var innerHtml = '<div class="row">';
-        for (var i = 1; i < 45; i++) {
-            var path = "img/all_eng_pics/00"
-            if (i<10){
-                path += '0'
-                path +=i
-                path += '.jpg"'
-            }
-            else{
-                path +=i
-                path += '.jpg"'
-            }
-            innerHtml += `<div class="col-md-2">
-                    <a class="fancybox" rel="group2" href="` + path + `">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="` + path + `" alt=""/>
-                        </div>
-                    </a>
-                </div>`
-            if (i%4 ===0){
-                innerHtml += `</div>
-                <div class="row">` 
-            }
-        }
-        innerHtml += '</div>'
-        return innerHtml;
-    }
-</script>
 <!-- Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {
