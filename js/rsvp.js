@@ -31,8 +31,12 @@ var data_div = function (valid_data){
         declined="";
         style="";
         dietry_checked="";
+        limerick_day_checked="";
         dietry_style="";
         under_age_style="";
+        if(item.limerick_day===true){
+            limerick_day_checked="checked"
+        }
         if(item.dietry_requirements==="None"){
             dietry_checked="checked";
             dietry_style="display: none;"
@@ -112,6 +116,12 @@ var data_div = function (valid_data){
                                 <p style="margin-bottom: -10px;">Eg. I once got a kiss on the cheek from Sir. Ian McKellin <p>
                                 <textarea name="fact" id="fact-`+index+`" 
                                 required rows="4" cols="50">`+item.fact+`</textarea>
+                            </div>
+                            <div class="col-md-10 col-md-offset-1">
+                                <h3>Would you be interested in a day 2 in Limerick City?</h3>
+                                <label for="limerick_day-`+index+`">I am interested</label>
+                                <input type="checkbox" class="rsvp-submission-checkbox" name="limerick_day" id="limerick_day-`+index+`" title="I am interested"
+                                    required `+limerick_day_checked+`>
                             </div>
                         </div>
                         <button type="button" id="button-1-`+index+`" class="btn-fill rsvp-submission-btn" onclick="add_plus_one(`+index+`)" style="`+style+`">
@@ -226,6 +236,10 @@ var on_data_submit = function (e) {
                         dict['post_wedding_breakfast'] = true
                         dict['not_attending_other_events'] = false
                     }
+                }
+                else if(title === 'limerick_day'){
+                    console.log(elements[i].checked)
+                    dict[title] = elements[i].checked;
                 }
                 else if(title === 'no_accommodation'){
                     dict[title] = elements[i].checked;
@@ -476,6 +490,12 @@ var add_plus_one = function (index){
                                 <p style="margin-bottom: -10px;">Eg. I once got a kiss on the cheek from Sir. Ian McKellin <p>
                                 <textarea name="fact" id="new_fact-`+index+`" 
                                 required rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="col-md-10 col-md-offset-1">
+                                <h3>Would you be interested in a day 2 in Limerick City?</h3>
+                                <label for="new_limerick_day-`+index+`">I am interested</label>
+                                <input type="checkbox" class="rsvp-submission-checkbox" name="new_limerick_day" id="new_limerick_day-`+index+`" title="I am interested"
+                                    required>
                             </div>
                         </div>
                     </div>
