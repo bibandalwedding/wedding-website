@@ -32,10 +32,14 @@ var data_div = function (valid_data){
         style="";
         dietry_checked="";
         limerick_day_checked="";
+        limerick_declined_checked="";
         dietry_style="";
         under_age_style="";
         if(item.limerick_day===true){
             limerick_day_checked="checked"
+        }
+        if(item.limerick_day===false){
+            limerick_declined_checked="checked"
         }
         if(item.dietry_requirements==="None"){
             dietry_checked="checked";
@@ -119,9 +123,12 @@ var data_div = function (valid_data){
                             </div>
                             <div class="col-md-10 col-md-offset-1">
                                 <h3>Would you be interested in a day 2 in Limerick City?</h3>
-                                <label for="limerick_day-`+index+`">I am interested</label>
-                                <input type="checkbox" class="rsvp-submission-checkbox" name="limerick_day" id="limerick_day-`+index+`" title="I am interested"
-                                    required `+limerick_day_checked+`>
+                                <label for="limerick_day-`+index+`">Yes</label>
+                                <input type="checkbox" class="rsvp-submission-checkbox" name="limerick_day" id="limerick_day-`+index+`" title="Yes"
+                                    required `+limerick_day_checked+` onclick=limerickDayToggle(`+index+`,`+false+`)></br>
+                                <label for="limerick_day-`+index+`">No</label>
+                                <input type="checkbox" class="rsvp-submission-checkbox" name="limerick_day_declined" id="limerick_day_declined-`+index+`" title="No"
+                                    required `+limerick_declined_checked+` onclick=declineLimerickDayToggle(`+index+`,`+false+`)>
                             </div>
                         </div>
                         <button type="button" id="button-1-`+index+`" class="btn-fill rsvp-submission-btn" onclick="add_plus_one(`+index+`)" style="`+style+`">
@@ -202,7 +209,6 @@ var on_data_submit = function (e) {
                 "plus_one_allowed": false,
                 "has_rsvped": true,
                 "accommodation": accommodation,
-                "has_accommodation": false,
                 "under_age": false
             };
 
@@ -218,6 +224,7 @@ var on_data_submit = function (e) {
                     dict = new_people[count];
                 }
                 title = title.replace("new_", "")
+                console.log('title', title);
                 if( title === 'rsvp'){
                     dict[title] = elements[i].checked;
                     if(elements[i].checked === true){
@@ -238,19 +245,6 @@ var on_data_submit = function (e) {
                     }
                 }
                 else if(title === 'limerick_day'){
-                    console.log(elements[i].checked)
-                    dict[title] = elements[i].checked;
-                }
-                else if(title === 'no_accommodation'){
-                    dict[title] = elements[i].checked;
-                }
-                else if(title === 'pre_wedding_dinner'){
-                    dict[title] = elements[i].checked;
-                }
-                else if(title === 'post_wedding_breakfast'){
-                    dict[title] = elements[i].checked;
-                }
-                else if(title === 'not_attending_other_events'){
                     dict[title] = elements[i].checked;
                 }
                 else if(title === 'dietry_requirements_checkbox'){
@@ -288,40 +282,14 @@ var on_data_submit = function (e) {
                     }
                     dict[title] = elements[i].value;
                 }
-                else if(title === 'accommodation'){
-                    dict['has_accommodation'] = true;
-                    dict[title] = elements[i].checked;
+                else if(title === 'limerick_day'){
                     if(elements[i].checked === true){
-                        dict['pre_wedding_dinner'] = true
-                        dict['post_wedding_breakfast'] = true
-                        dict['not_attending_other_events'] = false
+                        dict['limerick_day'] = true
                     }
                 }
-                else if(title === 'no_accommodation'){
-                    dict[title] = elements[i].checked;
-                }
-                else if(title === 'pre_wedding_dinner'){
-                    if(!(title in dict)){
-                        dict[title] = elements[i].checked;
-                    }
+                else if(title === 'limerick_day_declined'){
                     if(elements[i].checked === true){
-                        dict['no_accommodation'] = true
-                    }
-                }
-                else if(title === 'post_wedding_breakfast'){
-                    if(!(title in dict)){
-                        dict[title] = elements[i].checked;
-                    }
-                    if(elements[i].checked === true){
-                        dict['no_accommodation'] = true
-                    }
-                }
-                else if(title === 'not_attending_other_events'){
-                    if(!(title in dict)){
-                        dict[title] = elements[i].checked;
-                    }
-                    if(elements[i].checked === true){
-                        dict['no_accommodation'] = true
+                        dict['limerick_day'] = false
                     }
                 }
                 else if(title === 'dietry_requirements_checkbox'){
@@ -419,6 +387,30 @@ var dietry_toggle = function (index, val){
     }
 }
 
+var limerickDayToggle = function (index, val){
+    is_new = '';
+    other = '';
+    if(val===true){
+        is_new = 'new_';
+    }
+    const checked = document.getElementById(is_new+'limerick_day-'+index).checked;
+    if(checked===true){
+        document.getElementById(is_new+'limerick_day_declined-'+index).checked = false;
+    }
+}
+
+var declineLimerickDayToggle = function (index, val){
+    is_new = '';
+    other = '';
+    if(val===true){
+        is_new = 'new_';
+    }
+    const checked = document.getElementById(is_new+'limerick_day_declined-'+index).checked;
+    if(checked===true){
+        document.getElementById(is_new+'limerick_day-'+index).checked = false;
+    }
+}
+
 var remove_plus_one = function (index){
     document.getElementById('remove_button-1-'+index).style.display = "none";
     document.getElementById('button-1-'+index).style.display = "";
@@ -493,9 +485,12 @@ var add_plus_one = function (index){
                             </div>
                             <div class="col-md-10 col-md-offset-1">
                                 <h3>Would you be interested in a day 2 in Limerick City?</h3>
-                                <label for="new_limerick_day-`+index+`">I am interested</label>
-                                <input type="checkbox" class="rsvp-submission-checkbox" name="new_limerick_day" id="new_limerick_day-`+index+`" title="I am interested"
-                                    required>
+                                <label for="new_limerick_day-`+index+`">Yes</label>
+                                <input type="checkbox" class="rsvp-submission-checkbox" name="new_limerick_day" id="new_limerick_day-`+index+`" title="Yes"
+                                    required  onclick=limerickDayToggle(`+index+`,`+true+`)></br>
+                                <label for="new_limerick_day_declined-`+index+`">No</label>
+                                <input type="checkbox" class="rsvp-submission-checkbox" name="new_limerick_day_declined" id="new_limerick_day_declined-`+index+`" title="No"
+                                    required  onclick=declineLimerickDayToggle(`+index+`,`+true+`)>
                             </div>
                         </div>
                     </div>
