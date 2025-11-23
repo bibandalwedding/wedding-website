@@ -117,7 +117,7 @@ var data_div = function (valid_data){
                             </div>
                             <div class="col-md-10 col-md-offset-1">
                                 <h3>Please share one interesting fact about yourself. </h3>
-                                <p style="margin-bottom: -10px;">Eg. I once got a kiss on the cheek from Sir. Ian McKellin <p>
+                                <p style="margin-bottom: -10px;">Eg. I once got a kiss on the cheek from Sir. Ian McKellen <p>
                                 <textarea name="fact" id="fact-`+index+`" 
                                 required rows="4" cols="50">`+item.fact+`</textarea>
                             </div>
@@ -479,7 +479,7 @@ var add_plus_one = function (index){
                             </div>
                             <div class="col-md-10 col-md-offset-1">
                                 <h3>Please share one interesting fact about yourself. </h3>
-                                <p style="margin-bottom: -10px;">Eg. I once got a kiss on the cheek from Sir. Ian McKellin <p>
+                                <p style="margin-bottom: -10px;">Eg. I once got a kiss on the cheek from Sir. Ian McKellen <p>
                                 <textarea name="fact" id="new_fact-`+index+`" 
                                 required rows="4" cols="50"></textarea>
                             </div>
